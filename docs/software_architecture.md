@@ -15,7 +15,7 @@ Sistemin "hızlı, deterministik ve çökmeye karşı dayanıklı" (fault-tolera
   - `SQLite` veya `PostgreSQL` (İşlem geçmişi, Prediction Log ve Trade Lifecycle kayıtları için)
   - `Redis` (O anki aktif rejim, fiyat anlık hafızası ve rate-limit yönetimi için - İsteğe bağlı)
 - **Asenkron Yapı:** `asyncio` (Borsa websocket'ini dinlerken, aynı anda Claude API'sine istek atmak için kodun bloklanmaması şarttır)
-- **Yapay Zeka API:** `Anthropic Claude 3 Opus / Sonnet API` (Hızlı analizler için Sonnet, derin makro analizler için Opus)
+- **Yapay Zeka API:** `Anthropic Claude 4.6 Opus / Sonnet API` (Hızlı analizler için Sonnet, derin makro analizler için Opus)
 - **Human-in-the-Loop (Manuel Onay):** `python-telegram-bot` (Reddedilen veya arafta kalan işlemleri yöneticiye sormak ve onay almak için)
 
 ---
