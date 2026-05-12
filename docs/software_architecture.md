@@ -114,7 +114,15 @@ Canlı piyasada para yöneten bir yazılımda "Error Handling" her şeydir:
 
 ---
 
-## 7. Geliştirme (Deployment) Adımları
+## 7. Yazılım Hataları (Bugs) ve Güvenlik
+
+Bir botun kendi hatası (Syntax veya mantık hatası) yüzünden para kaybetmesi kabul edilemez.
+- **Strict Typing:** Tüm Python kodu `mypy` ile denetlenerek yazılır. Değişken tipleri (`float`, `int`, `dict`) kesin olarak belirtilir. Bir tane bile `TypeError` riski bırakılmaz.
+- **Unit Testing (Birim Testleri):** Canlı paraya bağlanmadan önce matematiksel motorların tamamı (Örn: `test_risk_engine.py`) en az `%95 Test Coverage` (Kapsam) ile `pytest` kütüphanesinden geçmek ZORUNDADIR. Risk limiti hesabında oluşabilecek `>=` yerine `>` yazma hatası bu aşamada yakalanır.
+
+---
+
+## 8. Geliştirme (Deployment) Adımları
 
 Sistem tek seferde canlıya alınmaz (No YOLO Deployment). Aşama aşama gidilmelidir:
 1. **Paper Trading (Dry Run):** Borsa API'si bağlanır ama emirler borsaya gitmez, veritabanına "sanal" olarak kaydedilir. Claude entegre edilir.

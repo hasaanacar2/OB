@@ -242,15 +242,16 @@ Test_Period = 20 gün
 Step_Size = 20 gün
 ```
 
-### 5.3 Walk-Forward Efficiency
+### 5.3 Walk-Forward Efficiency (WFE) ve Curve-Fitting Reddi
 
 ```
 WFE = Out_of_Sample_Return / In_Sample_Return
 ```
 
-- WFE > 0.5 → kabul edilebilir
-- WFE > 0.7 → iyi
-- WFE < 0.3 → overfit
+- WFE > 0.6 → Sağlıklı (Live markete geçebilir)
+- WFE < 0.4 → **OVERFIT (Aşırı Optimizasyon) - SİSTEM REDDEDİLDİ.**
+
+**Kural:** Eğer bir parametre (Örn: ADX 25) 3 yıllık veride (In-Sample) çok kâr ettirip, botun hiç görmediği son 6 aylık veride (Out-of-Sample) kârı %60'tan fazla düşürüyorsa, o parametre "Curve-Fitted" (Uydurma) kabul edilir ve botta KESİNLİKLE kullanılamaz. Parametreler her zaman daha geniş, yuvarlak rakamlarda (Robust) tutulmalıdır.
 
 ---
 

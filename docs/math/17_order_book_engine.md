@@ -69,6 +69,10 @@ if Price approaches Wall_Ask ∧ Buy_Market_Volume_Flow > Wall_Ask_Size / 2:
     Wall_is_Being_Eaten = True  → Breakout ihtimali yüksek!
 ```
 
+### 4.3 Front-Running Koruması (Entry Offset)
+Eğer tespit edilen duvar veya OB bölgesi çok belirginse, dünyadaki diğer yüzlerce bot da aynı yere limit emir girecektir. Emrinizin gerçekleşmeden fiyatın milimetrik dönmesini (Front-Running) engellemek için, limit emrimiz Duvarın/OB'nin tam uç noktasına değil, fiyatın geliş yönüne doğru **%0.05 ile %0.15** kadar ÖNÜNE (Offset) yerleştirilir. 
+Ufak bir Kâr/Zarar oranından (RR) feragat edilir ama emrin çalışıp bizi trene alması matematiksel olarak büyük ölçüde garanti altına alınır.
+
 ---
 
 ## 5. Spoofing (Sahte Emir) Tespiti

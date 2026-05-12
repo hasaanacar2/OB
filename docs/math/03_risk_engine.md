@@ -113,6 +113,14 @@ if consecutive_losses ≥ MAX_CONSECUTIVE_LOSSES:
     COOLDOWN(2_hours)   # 2 saat bekleme süresi
 ```
 
+### 3.5 Minimum Expected Edge (Slippage ve Komisyon Koruması)
+Sistem sadece kağıt üzerindeki kâra değil, "Net Kâra" (Slippage + Komisyon Düşülmüş) odaklanır. Bir işlemin hedef kârı (TP), o işlemin maliyetinin en az 3 katı olmak zorundadır. Aksi halde işlem VETO edilir.
+```
+Total_Cost = Maker_Fee + Taker_Fee + Estimated_Slippage
+if Expected_Profit_Percent < Total_Cost × 3:
+    REJECT_ORDER ("Kâr marjı, komisyon ve kaymayı kurtarmıyor. Çöp işlem.")
+```
+
 ---
 
 ## 4. Drawdown Kontrolü
